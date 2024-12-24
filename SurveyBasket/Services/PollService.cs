@@ -7,7 +7,7 @@ public class PollService : IPollService
     private static readonly List<Poll> _polls = [
         new Poll {
             Id = 1,
-            Name = "Poll 1",
+            Title = "Poll 1",
             Description = "My first poll"
         }
     ];
@@ -37,7 +37,7 @@ public class PollService : IPollService
         if (currentPoll == null)
              return false;
        
-        currentPoll.Name = poll.Name;
+        currentPoll.Title = poll.Title;
         currentPoll.Description = poll.Description;
 
         return true;

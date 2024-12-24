@@ -1,3 +1,5 @@
+
+
 namespace SurveyBasket;
 
 public class Program
@@ -6,14 +8,7 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
-        builder.Services.AddControllers();
-
-        // Add Swagger services
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
-
-        builder.Services.AddScoped<IPollService, PollService>();
+        builder.Services.AddDependencies();
 
         var app = builder.Build();
 
