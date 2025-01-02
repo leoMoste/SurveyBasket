@@ -1,10 +1,10 @@
-﻿namespace SurveyBasket.Contracts.Response;
+﻿namespace SurveyBasket.Contracts.Requests;
 
-public record PollResponse(
-    int Id,
+public record PollRequest (
     string Title,
     string Summary,
     bool IsPublished,
     DateOnly StartsAt,
     DateOnly EndsAt
-    );
+);
+
