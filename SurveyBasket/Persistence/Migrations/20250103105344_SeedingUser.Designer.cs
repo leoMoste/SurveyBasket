@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyBasket.Persistence;
 
@@ -11,9 +12,11 @@ using SurveyBasket.Persistence;
 namespace SurveyBasket.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250103105344_SeedingUser")]
+    partial class SeedingUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -232,19 +235,17 @@ namespace SurveyBasket.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3f103a49-2018-472e-a73e-3c6c27b546f1",
+                            Id = "6c2d01f9-c72a-4ba8-9777-ff47cc620cfd",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c3fb3561-d08a-4233-a1dc-8ce39a829d38",
+                            ConcurrencyStamp = "ad4840f4-fd0f-4e74-90e3-8d2eeb4295b6",
                             Email = "johndoe@example.com",
-                            EmailConfirmed = true,
+                            EmailConfirmed = false,
                             FirstName = "John",
                             LastName = "Doe",
                             LockoutEnabled = false,
-                            NormalizedEmail = "JOHNDOE@EXAMPLE.COM",
-                            NormalizedUserName = "JOHNDOE",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDr8pe0YLoF6NV65k22CMIafMYRvi5k4QJp4bDrlXGR/CFwt0vD/WDWTDmxyXiOSyw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOZSIF6sHBWQituWyMhLBed+Gi6qovCJzXvSTiE8nhivJyMebUDDyqC8P8C5bhDIKQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "03cca953-c015-4030-b938-6fd1c3fd821a",
+                            SecurityStamp = "fcdd71dc-7496-4375-974d-81c50f558680",
                             TwoFactorEnabled = false,
                             UserName = "johndoe"
                         });

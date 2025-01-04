@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyBasket.Persistence;
 
@@ -11,9 +12,11 @@ using SurveyBasket.Persistence;
 namespace SurveyBasket.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250102145712_AddIdentityTables")]
+    partial class AddIdentityTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -228,26 +231,6 @@ namespace SurveyBasket.Persistence.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "3f103a49-2018-472e-a73e-3c6c27b546f1",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "c3fb3561-d08a-4233-a1dc-8ce39a829d38",
-                            Email = "johndoe@example.com",
-                            EmailConfirmed = true,
-                            FirstName = "John",
-                            LastName = "Doe",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "JOHNDOE@EXAMPLE.COM",
-                            NormalizedUserName = "JOHNDOE",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDr8pe0YLoF6NV65k22CMIafMYRvi5k4QJp4bDrlXGR/CFwt0vD/WDWTDmxyXiOSyw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "03cca953-c015-4030-b938-6fd1c3fd821a",
-                            TwoFactorEnabled = false,
-                            UserName = "johndoe"
-                        });
                 });
 
             modelBuilder.Entity("SurveyBasket.Entities.Poll", b =>

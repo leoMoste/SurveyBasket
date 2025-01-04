@@ -1,4 +1,6 @@
 
+using Microsoft.AspNetCore.Identity;
+
 namespace SurveyBasket;
 
 public class Program
@@ -6,6 +8,7 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
 
         builder.Services.AddDependencies(builder.Configuration);
 
@@ -20,8 +23,8 @@ public class Program
 
         app.UseHttpsRedirection();
 
+        app.UseAuthentication();
         app.UseAuthorization();
-
 
         app.MapControllers();
 
